@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		E1BEBC5F2CD736FB007B34A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1BEBC462CD736F9007B34A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1BEBC4D2CD736F9007B34A5;
+			remoteInfo = WaterChecker;
+		};
+		E1BEBC692CD736FB007B34A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1BEBC462CD736F9007B34A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1BEBC4D2CD736F9007B34A5;
+			remoteInfo = WaterChecker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E1BEBC4E2CD736F9007B34A5 /* WaterChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1BEBC5E2CD736FB007B34A5 /* WaterCheckerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterCheckerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1BEBC682CD736FB007B34A5 /* WaterCheckerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterCheckerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E1BEBC502CD736F9007B34A5 /* WaterChecker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WaterChecker;
+			sourceTree = "<group>";
+		};
+		E1BEBC612CD736FB007B34A5 /* WaterCheckerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WaterCheckerTests;
+			sourceTree = "<group>";
+		};
+		E1BEBC6B2CD736FB007B34A5 /* WaterCheckerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WaterCheckerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1BEBC4B2CD736F9007B34A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1BEBC5B2CD736FB007B34A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1BEBC652CD736FB007B34A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1BEBC452CD736F9007B34A5 = {
+			isa = PBXGroup;
+			children = (
+				E1BEBC502CD736F9007B34A5 /* WaterChecker */,
+				E1BEBC612CD736FB007B34A5 /* WaterCheckerTests */,
+				E1BEBC6B2CD736FB007B34A5 /* WaterCheckerUITests */,
+				E1BEBC4F2CD736F9007B34A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1BEBC4F2CD736F9007B34A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1BEBC4E2CD736F9007B34A5 /* WaterChecker.app */,
+				E1BEBC5E2CD736FB007B34A5 /* WaterCheckerTests.xctest */,
+				E1BEBC682CD736FB007B34A5 /* WaterCheckerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1BEBC4D2CD736F9007B34A5 /* WaterChecker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1BEBC722CD736FB007B34A5 /* Build configuration list for PBXNativeTarget "WaterChecker" */;
+			buildPhases = (
+				E1BEBC4A2CD736F9007B34A5 /* Sources */,
+				E1BEBC4B2CD736F9007B34A5 /* Frameworks */,
+				E1BEBC4C2CD736F9007B34A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E1BEBC502CD736F9007B34A5 /* WaterChecker */,
+			);
+			name = WaterChecker;
+			packageProductDependencies = (
+			);
+			productName = WaterChecker;
+			productReference = E1BEBC4E2CD736F9007B34A5 /* WaterChecker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1BEBC5D2CD736FB007B34A5 /* WaterCheckerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1BEBC752CD736FB007B34A5 /* Build configuration list for PBXNativeTarget "WaterCheckerTests" */;
+			buildPhases = (
+				E1BEBC5A2CD736FB007B34A5 /* Sources */,
+				E1BEBC5B2CD736FB007B34A5 /* Frameworks */,
+				E1BEBC5C2CD736FB007B34A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1BEBC602CD736FB007B34A5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E1BEBC612CD736FB007B34A5 /* WaterCheckerTests */,
+			);
+			name = WaterCheckerTests;
+			packageProductDependencies = (
+			);
+			productName = WaterCheckerTests;
+			productReference = E1BEBC5E2CD736FB007B34A5 /* WaterCheckerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E1BEBC672CD736FB007B34A5 /* WaterCheckerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1BEBC782CD736FB007B34A5 /* Build configuration list for PBXNativeTarget "WaterCheckerUITests" */;
+			buildPhases = (
+				E1BEBC642CD736FB007B34A5 /* Sources */,
+				E1BEBC652CD736FB007B34A5 /* Frameworks */,
+				E1BEBC662CD736FB007B34A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1BEBC6A2CD736FB007B34A5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E1BEBC6B2CD736FB007B34A5 /* WaterCheckerUITests */,
+			);
+			name = WaterCheckerUITests;
+			packageProductDependencies = (
+			);
+			productName = WaterCheckerUITests;
+			productReference = E1BEBC682CD736FB007B34A5 /* WaterCheckerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1BEBC462CD736F9007B34A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					E1BEBC4D2CD736F9007B34A5 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					E1BEBC5D2CD736FB007B34A5 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = E1BEBC4D2CD736F9007B34A5;
+					};
+					E1BEBC672CD736FB007B34A5 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = E1BEBC4D2CD736F9007B34A5;
+					};
+				};
+			};
+			buildConfigurationList = E1BEBC492CD736F9007B34A5 /* Build configuration list for PBXProject "WaterChecker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1BEBC452CD736F9007B34A5;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E1BEBC4F2CD736F9007B34A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1BEBC4D2CD736F9007B34A5 /* WaterChecker */,
+				E1BEBC5D2CD736FB007B34A5 /* WaterCheckerTests */,
+				E1BEBC672CD736FB007B34A5 /* WaterCheckerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1BEBC4C2CD736F9007B34A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1BEBC5C2CD736FB007B34A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1BEBC662CD736FB007B34A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1BEBC4A2CD736F9007B34A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1BEBC5A2CD736FB007B34A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1BEBC642CD736FB007B34A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1BEBC602CD736FB007B34A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1BEBC4D2CD736F9007B34A5 /* WaterChecker */;
+			targetProxy = E1BEBC5F2CD736FB007B34A5 /* PBXContainerItemProxy */;
+		};
+		E1BEBC6A2CD736FB007B34A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1BEBC4D2CD736F9007B34A5 /* WaterChecker */;
+			targetProxy = E1BEBC692CD736FB007B34A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E1BEBC702CD736FB007B34A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E1BEBC712CD736FB007B34A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1BEBC732CD736FB007B34A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterChecker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mira.WaterChecker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E1BEBC742CD736FB007B34A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterChecker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mira.WaterChecker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E1BEBC762CD736FB007B34A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mira.WaterCheckerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterChecker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WaterChecker";
+			};
+			name = Debug;
+		};
+		E1BEBC772CD736FB007B34A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mira.WaterCheckerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterChecker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WaterChecker";
+			};
+			name = Release;
+		};
+		E1BEBC792CD736FB007B34A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mira.WaterCheckerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WaterChecker;
+			};
+			name = Debug;
+		};
+		E1BEBC7A2CD736FB007B34A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mira.WaterCheckerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WaterChecker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1BEBC492CD736F9007B34A5 /* Build configuration list for PBXProject "WaterChecker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1BEBC702CD736FB007B34A5 /* Debug */,
+				E1BEBC712CD736FB007B34A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1BEBC722CD736FB007B34A5 /* Build configuration list for PBXNativeTarget "WaterChecker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1BEBC732CD736FB007B34A5 /* Debug */,
+				E1BEBC742CD736FB007B34A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1BEBC752CD736FB007B34A5 /* Build configuration list for PBXNativeTarget "WaterCheckerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1BEBC762CD736FB007B34A5 /* Debug */,
+				E1BEBC772CD736FB007B34A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1BEBC782CD736FB007B34A5 /* Build configuration list for PBXNativeTarget "WaterCheckerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1BEBC792CD736FB007B34A5 /* Debug */,
+				E1BEBC7A2CD736FB007B34A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1BEBC462CD736F9007B34A5 /* Project object */;
+}
