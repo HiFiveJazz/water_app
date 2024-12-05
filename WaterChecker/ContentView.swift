@@ -1,21 +1,51 @@
 import SwiftUI
+import SplineRuntime
 
 struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Home Page")
-                NavigationLink(destination: GetStarted()) {
-                    Text("Get Started")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
+                Onboard3DView()
+                    .frame(height: 589)
+                    .ignoresSafeArea(edges: .top)
+                
+                VStack(spacing: 21) {
+                    Text("Welcome!")
+                        .font(.title.bold())
+
+                    Text("Stay up to date with all your hydration goals!")
+                       
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center) // Centers the text across lines
+                        .lineLimit(nil) // Ensures it wraps to as many lines as needed
+
+                    NavigationLink(destination: GetStarted()) {
+                        Text("Get Started")
+                            .padding()
+                            .background(Color.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(20)
+                    }
                 }
+                .padding()
+                .frame(maxWidth: .infinity) // Ensures text uses all available space
             }
         }
     }
 }
+
+struct Onboard3DView: View {
+    var body: some View {
+            // fetching from cloud
+            let url = URL(string: "https://build.spline.design/6fr-fOnASo1PFurVGexr/scene.splineswift")!
+
+            // fetching from local
+            // let url = Bundle.main.url(forResource: "scene", withExtension: "splineswift")!
+
+            SplineView(sceneFileURL: url).ignoresSafeArea(.all)
+    }
+}
+
 
 struct GetStarted: View {
     @State private var bodyweight = ""
