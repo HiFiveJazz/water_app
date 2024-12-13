@@ -217,7 +217,7 @@ struct GetStarted: View {
 
                     NavigationLink(
                         destination: UserDataView(
-                            bodyweight: Double(bodyweight) ?? 0.0,
+                            bodyweight: Double(bodyweight),
                             weightUnit: weightUnit,
                             birthdate: birthdate,
                             wakeUpTime: wakeUpTime,
