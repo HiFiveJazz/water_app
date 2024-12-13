@@ -55,13 +55,13 @@ struct Onboard3DView: View {
 
 // A reusable component for each question
 struct GetStarted: View {
-    @State private var bodyweight = ""
+    @State private var bodyweight = 100
     @State private var weightUnit = "lbs"
     @State private var birthdate = Calendar.current.date(from: DateComponents(year: 2004, month: 11, day: 28)) ?? Date()
     @State private var wakeUpTime = Calendar.current.date(bySettingHour: 14, minute: 0, second: 0, of: Date()) ?? Date()
     @State private var sleepTime = Calendar.current.date(bySettingHour: 4, minute: 0, second: 0, of: Date()) ?? Date()
     @State private var exerciseHours = 0.0
-    @State private var gender = "Male"
+    @State private var gender = "Female"
     @State private var showError: Bool = false
     @State private var navigateToNextPage: Bool = false
 
@@ -100,16 +100,22 @@ struct GetStarted: View {
                             title: "Bodyweight",
                             explanation: "Your bodyweight helps us calculate personalized hydration goals."
                         ) {
-                            HStack {
-                                TextField("Enter your bodyweight", text: $bodyweight)
-                                    .keyboardType(.decimalPad)
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .foregroundColor(.black)
-                                    .background(Color.black.opacity(0.9))
-                                    .cornerRadius(8)
+                            VStack {
+                                // Wheel Picker for Bodyweight
+                                Picker("Bodyweight", selection: $bodyweight) {
+                                    ForEach(30...400, id: \.self) { weight in
+                                        Text("\(weight) \(weightUnit)") // Dynamically updates unit label
+                                            .foregroundColor(.white) // Explicitly set text color to white
+                                            .tag(weight)
+                                    }
+                                }
+                                .pickerStyle(WheelPickerStyle())
+                                .frame(height: 150)
+                                .clipped()
 
+                                // Picker for Unit
                                 Picker("Unit", selection: $weightUnit) {
-                                    ForEach(weightUnits, id: \.self) { unit in
+                                    ForEach(["lbs", "kg"], id: \.self) { unit in
                                         Text(unit)
                                             .foregroundColor(.white)
                                     }
@@ -172,7 +178,7 @@ struct GetStarted: View {
                                     .accentColor(.red)
                                 Text("\(formattedExerciseTime)")
                                     .font(.subheadline)
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(.white)
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                         }
@@ -366,11 +372,20 @@ struct UserDataView: View {
 
             VStack(spacing: 0) {
                 // Confirm Button for navigating to WaterSettingsView
-                NavigationLink(destination: WaterSettingsView()
-                                .navigationBarBackButtonHidden(true),
-                               isActive: $navigateToWaterSettings) {
+                NavigationLink(
+                    destination: WaterSettingsView(
+                        bodyweight: bodyweight,
+                        weightUnit: weightUnit,
+                        birthdate: birthdate,
+                        exerciseTime: Double(exerciseTime.split(separator: "h")[0]) ?? 0, // Convert "xh ym" to a Double
+                        gender: gender
+                    )
+                    .navigationBarBackButtonHidden(true),
+                    isActive: $navigateToWaterSettings
+                ) {
                     EmptyView()
                 }
+
 
                 Button(action: {
                     navigateToWaterSettings = true
@@ -385,6 +400,7 @@ struct UserDataView: View {
                 }
                 .padding(.horizontal)
             }
+
             .background(Color.black)
         }
         .background(Color.black.edgesIgnoringSafeArea(.all))
@@ -422,6 +438,34 @@ struct WaterSettingsView: View {
     @State private var sittings: Int = 8
     @State private var notificationsEnabled: Bool = false
 
+    // Inputs for water calculation
+    let bodyweight: Double
+    let weightUnit: String
+    let birthdate: Date
+    let exerciseTime: Double
+    let gender: String
+
+    var calculatedWaterIntake: Int {
+        // Convert bodyweight to lbs if it's in kg
+        let weightInLbs = weightUnit == "kg" ? bodyweight * 2.20462 : bodyweight
+
+        // Calculate age
+        let age = Calendar.current.dateComponents([.year], from: birthdate, to: Date()).year ?? 0
+
+        // Convert exercise time from hours to minutes
+        let exerciseMinutes = exerciseTime * 60
+
+        // Gender adjustment: +500 mL for males
+        let genderAdjustment = gender == "Male" ? 1000 : 0
+
+        // Apply the formula
+        let waterIntake = 2500 + (2.2 * weightInLbs) - (2 * Double(age)) + (exerciseMinutes * 0.4) + Double(genderAdjustment)
+
+        // Return rounded value
+        return Int(waterIntake)
+    }
+
+
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -431,12 +475,29 @@ struct WaterSettingsView: View {
                     .foregroundColor(.white)
                     .padding(.bottom, 20)
 
+                // Display the calculated water intake
+                VStack {
+                    Text("Recommended Daily Water Intake")
+                        .font(.headline)
+                        .foregroundColor(.white)
+
+                    Text("\(calculatedWaterIntake) mL")
+                        .font(.system(size: 40, weight: .bold))
+                        .foregroundColor(.red)
+
+                    Text("Based on your weight, age, and exercise.")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
+
+                // Sittings slider
                 Text("How many times a day would you like to drink water?")
                     .font(.headline)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
 
-                // Slider for sittings
                 VStack {
                     Slider(value: Binding(get: {
                         Double(self.sittings)
@@ -492,6 +553,7 @@ struct WaterSettingsView: View {
         }
     }
 }
+
 
 
 #Preview {
