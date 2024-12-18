@@ -377,6 +377,8 @@ struct UserDataView: View {
                         bodyweight: bodyweight,
                         weightUnit: weightUnit,
                         birthdate: birthdate,
+                        wakeUpTime: wakeUpTime,
+                        sleepTime: sleepTime,
                         exerciseTime: Double(exerciseTime.split(separator: "h")[0]) ?? 0, // Convert "xh ym" to a Double
                         gender: gender
                     )
@@ -442,8 +444,11 @@ struct WaterSettingsView: View {
     let bodyweight: Double
     let weightUnit: String
     let birthdate: Date
+    let wakeUpTime: Date
+    let sleepTime: Date
     let exerciseTime: Double
     let gender: String
+  
 
     var calculatedWaterIntake: Int {
         // Convert bodyweight to lbs if it's in kg
@@ -455,7 +460,7 @@ struct WaterSettingsView: View {
         // Convert exercise time from hours to minutes
         let exerciseMinutes = exerciseTime * 60
 
-        // Gender adjustment: +500 mL for males
+        // Gender adjustment: +1000 mL for males (500 mL mentioned before, but code uses 1000)
         let genderAdjustment = gender == "Male" ? 1000 : 0
 
         // Apply the formula
@@ -464,7 +469,6 @@ struct WaterSettingsView: View {
         // Return rounded value
         return Int(waterIntake)
     }
-
 
     var body: some View {
         NavigationView {
@@ -536,6 +540,12 @@ struct WaterSettingsView: View {
                         .cornerRadius(8)
                 }
                 .padding(.horizontal)
+                .simultaneousGesture(TapGesture().onEnded {
+                    // Schedule notifications only if enabled
+                    if notificationsEnabled {
+                        scheduleNotifications()
+                    }
+                })
             }
             .padding()
             .background(Color.black.edgesIgnoringSafeArea(.all))
@@ -545,16 +555,53 @@ struct WaterSettingsView: View {
 
     private func requestNotificationPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-            if granted {
-                self.notificationsEnabled = true
-            } else {
-                print("Notification permission denied.")
+            DispatchQueue.main.async {
+                self.notificationsEnabled = granted
+            }
+        }
+    }
+
+    private func scheduleNotifications() {
+        // Cancel any previously scheduled notifications to avoid duplicates
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+
+        let totalInterval = sleepTime.timeIntervalSince(wakeUpTime)
+        guard totalInterval > 0, sittings > 0 else { return }
+
+        // Interval between reminders
+        let intervalBetweenReminders = totalInterval / Double(sittings)
+
+        // Calculate per-sitting intake
+        let perSittingIntake = calculatedWaterIntake / sittings
+
+        for i in 1...sittings {
+            // Calculate the fire date by adding i * interval to the wakeUpTime
+            let fireDate = wakeUpTime.addingTimeInterval(intervalBetweenReminders * Double(i))
+
+            // Create the notification content
+            let content = UNMutableNotificationContent()
+            content.title = "Hydration Reminder"
+            content.body = "Drink \(perSittingIntake) mL of water!"
+            content.sound = UNNotificationSound.default
+
+            // Extract hour/minute/second from fireDate
+            let calendar = Calendar.current
+            let triggerDate = calendar.dateComponents([.hour, .minute, .second], from: fireDate)
+
+            // Use a UNCalendarNotificationTrigger
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+
+            let identifier = "WaterReminder-\(i)"
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("Scheduling notification failed: \(error)")
+                }
             }
         }
     }
 }
-
-
 
 #Preview {
     ContentView()
